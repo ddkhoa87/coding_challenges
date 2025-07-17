@@ -2,20 +2,17 @@
 
 #include "source.hpp"
 
-std::uint64_t exp(const std::uint64_t x, std::uint64_t n);
-
 struct ExpTestData {
     std::uint64_t x;
     std::uint64_t n;
     std::uint64_t expected_result;
 };
 
-class ExpParametrizedTest : public testing::TestWithParam<ExpTestData> {
-};
+class ExpParametrizedTest : public testing::TestWithParam<ExpTestData> {};
 
 TEST_P(ExpParametrizedTest, Successful) {
-    const auto& test_data = GetParam();
-    EXPECT_EQ(exp(test_data.x, test_data.n), test_data.expected_result);
+    const auto [x, n, expected_result] = GetParam();
+    EXPECT_EQ(exp(x, n), expected_result);
 }
 
 INSTANTIATE_TEST_SUITE_P(
