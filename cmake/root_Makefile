@@ -1,0 +1,22 @@
+all: help
+
+.PHONY: help clean windows linux
+
+help:
+	@echo "Usage:"
+	@echo "  make <platform> - Configure and build all sub-projects for a platform"
+	@echo "  Examples:"
+	@echo "    make windows"
+	@echo "    make linux"
+	@echo "  make clean   - Clean all build directories"
+
+windows:
+	cmake --preset windows
+	cmake --build --preset windows
+
+linux:
+	cmake --preset linux
+	cmake --build --preset linux
+
+clean:
+	rmdir /s /q build || true

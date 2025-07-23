@@ -1,0 +1,12 @@
+# Top-level CMakeLists.txt
+cmake_minimum_required(VERSION 3.20)
+
+project(CodingChallenges CXX)
+
+# Find all subdirectories containing a CMakeLists.txt file
+file(GLOB subprojects LIST_DIRECTORIES true */CMakeLists.txt)
+
+foreach(subproject_cmakelists ${subprojects})
+    get_filename_component(subproject_dir ${subproject_cmakelists} DIRECTORY)
+    add_subdirectory(${subproject_dir})
+endforeach()

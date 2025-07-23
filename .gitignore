@@ -1,2 +1,7 @@
+.env
 out
 test
+*.dll
+*.exe
+*.o
+*.obj
