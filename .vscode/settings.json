@@ -75,6 +75,10 @@
     "editor.rulers": [
         90
     ],
+    "[markdown]": {
+        "editor.wordWrap": "wordWrapColumn",
+        "editor.wordWrapColumn": 90
+    },
     "editor.wordWrap": "wordWrapColumn",
     "editor.wordWrapColumn": 90,
     "makefile.configureOnOpen": false
