@@ -5,3 +5,7 @@ test
 *.exe
 *.o
 *.obj
+
+# Private interview assignments
+english_word_puzzle/
+prime_sum_factorization/
